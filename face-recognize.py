@@ -28,9 +28,10 @@ while True:
         # Identify Faces with the co ordinates /end/
 
         id_,conf = recognizer.predict(roi_gray)
-        if conf >= 45 and conf <= 90:
+        if conf >= 50 and conf <= 90:
             print(id_)
             print(labels[id_])
+            print(conf)
             font = cv2.FONT_HERSHEY_SIMPLEX
             name = labels[id_]
             color = (255, 255, 255)
@@ -38,8 +39,8 @@ while True:
             cv2.putText(frame, name, (x,y), font, 1, color, stroke, cv2.LINE_AA)
 
         # Save Faces /start/
-        img_item = "8.png"
-        cv2.imwrite(img_item, roi_color)
+        #img_item = "8.png"
+        #cv2.imwrite(img_item, roi_color)
         # Save Faces /start/
 
         # Making the rectangle around the face /start/
