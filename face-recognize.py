@@ -39,8 +39,7 @@ while True:
     count += 1
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=2.0, minNeighbors=5)
-
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=3.0, minNeighbors=5)
    
     for (x,y,w,h) in faces:
         # Identify Faces with the co ordinates /start/
